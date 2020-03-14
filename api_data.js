@@ -175,7 +175,7 @@ define({ "api": [
   {
     "type": "post",
     "url": "/refreshtoken",
-    "title": "Regerate-Token",
+    "title": "regenerate-token",
     "description": "<p>: To get the new token for already logged in user.</p>",
     "group": ":_Users",
     "name": ":_refresh-token_***************************************************************************************************************************************************************",
