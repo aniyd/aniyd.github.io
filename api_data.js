@@ -398,7 +398,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"username\": $username,\n            \"email\": $email,\n            \"userlevel\": \"superAdmin\"/\"admin\"/\"client\"/\"manager\"/\"agent\"\n         msg\": \"Signin Successfull\"\n       }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"username\": $username,\n            \"email\": $email,\n            \"userlevel\": \"superAdmin\"/\"admin\"/\"client\"/\"manager\"/\"agent\"\n         \"msg\": \"Signin Successfull\"\n       }\n  ]\n}",
           "type": "json"
         }
       ]
