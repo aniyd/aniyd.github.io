@@ -245,7 +245,7 @@
       ]
     },
     "version": "1.0.0",
-    "filename": "src/routes/refershtoken.js",
+    "filename": "src/routes/refreshtoken.js",
     "groupTitle": ":_Users"
   },
   {
@@ -398,7 +398,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n          \"token\": $token\n          \"msg\": \"Signin Successfull\"\n       }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n          \"token\": $token\n          \"username\": $username,\n             \"email\": $email,\n             \"userlevel\": \"superAdmin\"/\"admin\"/\"client\"/\"manager\"/\"agent\"\n          \"msg\": \"Signin Successfull\"\n       }\n  ]\n}",
           "type": "json"
         }
       ]
