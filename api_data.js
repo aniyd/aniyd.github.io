@@ -285,6 +285,117 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/add-client",
+    "title": "add-client",
+    "description": "<p>:Adding client to user list</p>",
+    "group": ":_Users",
+    "name": ":_add-client_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "confirmpassword",
+            "description": "<p>confirmpassword</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>username</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userlevel",
+            "description": "<p>&quot;client&quot;</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"client is added successfully\"\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/addClient.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
     "url": "/add-manager",
     "title": "add-manager",
     "description": "<p>:Adding manager to user list</p>",
@@ -819,6 +930,82 @@ define({ "api": [
   {
     "type": "post",
     "url": "/view-manager",
+    "title": "view-client",
+    "description": "<p>: Get the list of clients</p>",
+    "group": ":_Users",
+    "name": ":_view-client_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"clients list retrieved successfully\",\n         \"client-list\": [{\"username\":\"client1\", \"useremail\": \"client1@gmail.com\"}, {\"username\":\"client2\", \"useremail\": \"client2@gmail.com\"}]\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "src/routes/viewClient.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
+    "url": "/view-manager",
     "title": "view-manager",
     "description": "<p>: Get the list of managers for current client</p>",
     "group": ":_Users",
@@ -883,7 +1070,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"managers list retrieved successfully\",\n         \"agent-list\": [{\"username\":\"Manager1\", \"useremail\": \"manager1@gmail.com\"}, {\"username\":\"Manager2\", \"useremail\": \"manager2@gmail.com\"}]\n     }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"managers list retrieved successfully\",\n         \"manager-list\": [{\"username\":\"Manager1\", \"useremail\": \"manager1@gmail.com\"}, {\"username\":\"Manager2\", \"useremail\": \"manager2@gmail.com\"}]\n     }\n  ]\n}",
           "type": "json"
         }
       ]
