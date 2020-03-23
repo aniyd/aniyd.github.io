@@ -174,6 +174,117 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/add-admin",
+    "title": "add-admin",
+    "description": "<p>:Adding admin to user list</p>",
+    "group": ":_Users",
+    "name": ":_add-admin_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "confirmpassword",
+            "description": "<p>confirmpassword</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "username",
+            "description": "<p>username</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userlevel",
+            "description": "<p>&quot;admin&quot;</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"admin is added successfully\"\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/addAdmin.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
     "url": "/add-agent",
     "title": "add-agent",
     "description": "<p>:Adding agent to user list</p>",
@@ -849,6 +960,158 @@ define({ "api": [
     },
     "version": "0.0.0",
     "filename": "src/routes/signup.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
+    "url": "/verify-acccount",
+    "title": "",
+    "description": "<p>: API to verify the signup by upper level</p>",
+    "group": ":_Users",
+    "name": ":_verify-account_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"account activated\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "src/routes/verifyAccount.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
+    "url": "/view-admin",
+    "title": "view-admin",
+    "description": "<p>: Get the list of admins</p>",
+    "group": ":_Users",
+    "name": ":_view-admin_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"admins list retrieved successfully\",\n         \"admin-list\": [{\"username\":\"admin1\", \"useremail\": \"admin1@gmail.com\"}, {\"username\":\"admin2\", \"useremail\": \"admin2@gmail.com\"}]\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "src/routes/viewAdmin.js",
     "groupTitle": ":_Users"
   },
   {
