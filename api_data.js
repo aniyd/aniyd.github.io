@@ -618,6 +618,179 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/change-password",
+    "title": "change-password",
+    "description": "<p>: API to change the password of logged-in user</p>",
+    "group": ":_Users",
+    "name": ":_change-password_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "currentpassword",
+            "description": "<p>currentpassword</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "confirmpassword",
+            "description": "<p>confirmpassword</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"Password changed successfully. Login again with new password\"\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/routes/changePassword.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
+    "url": "/get-info",
+    "title": "get-info",
+    "description": "<p>: API to get info about particular user</p>",
+    "group": ":_Users",
+    "name": ":_get-info_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"user info retrieved\",\n         \"password\": $pasword,\n         \"addtress\": $address,\n         \"username\": $username\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "src/routes/getInfo.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
     "url": "/refreshtoken",
     "title": "regenerate-token",
     "description": "<p>: To get the new token for already logged in user.</p>",
@@ -964,8 +1137,112 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/update-info",
+    "title": "update-info",
+    "description": "<p>: API to update info about particular user</p>",
+    "group": ":_Users",
+    "name": ":_update-info_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>phone</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"Information updated successfully.\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "src/routes/updateInfo.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
     "url": "/verify-acccount",
-    "title": "",
+    "title": "Verify Account",
     "description": "<p>: API to verify the signup by upper level</p>",
     "group": ":_Users",
     "name": ":_verify-account_***************************************************************************************************************************************************************",
