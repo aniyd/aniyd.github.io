@@ -193,15 +193,22 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "password",
-            "description": "<p>password</p>"
+            "field": "phone",
+            "description": "<p>phone</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "confirmpassword",
-            "description": "<p>confirmpassword</p>"
+            "field": "phone2",
+            "description": "<p>phone2</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address</p>"
           },
           {
             "group": "Parameter",
@@ -304,15 +311,22 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "password",
-            "description": "<p>password</p>"
+            "field": "phone",
+            "description": "<p>phone</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "confirmpassword",
-            "description": "<p>confirmpassword</p>"
+            "field": "phone2",
+            "description": "<p>phone2</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address</p>"
           },
           {
             "group": "Parameter",
@@ -415,15 +429,43 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "password",
-            "description": "<p>password</p>"
+            "field": "phone",
+            "description": "<p>phone</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "confirmpassword",
-            "description": "<p>confirmpassword</p>"
+            "field": "phone2",
+            "description": "<p>phone2</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "industry",
+            "description": "<p>industry_field</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "company",
+            "description": "<p>company_name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "logo",
+            "description": "<p>logo(base64 img data)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address</p>"
           },
           {
             "group": "Parameter",
@@ -526,15 +568,22 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "password",
-            "description": "<p>password</p>"
+            "field": "phone",
+            "description": "<p>phone</p>"
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "confirmpassword",
-            "description": "<p>confirmpassword</p>"
+            "field": "phone2",
+            "description": "<p>phone2</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>address</p>"
           },
           {
             "group": "Parameter",
@@ -715,6 +764,96 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/change-user-status",
+    "title": "change-user-status",
+    "description": "<p>: API to change the status of user to block from active and active from block.</p>",
+    "group": ":_Users",
+    "name": ":_change-user-status_***************************************************************************************************************************************************************",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type(block/unblock)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "allowedValues": [
+              "true",
+              "false"
+            ],
+            "optional": false,
+            "field": "Success",
+            "description": "<p>response status ( false for error, true for success )</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "Status",
+            "description": "<p>status code</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Message",
+            "description": "<p>response message string</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "AppVersion",
+            "description": "<p>APP version</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Result",
+            "description": "<p>result</p> <hr>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"user status changed successfully.\"\n      }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "src/routes/changeStatus.js",
+    "groupTitle": ":_Users"
+  },
+  {
+    "type": "post",
     "url": "/get-info",
     "title": "get-info",
     "description": "<p>: API to get info about particular user</p>",
@@ -780,7 +919,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"user info retrieved\",\n         \"password\": $pasword,\n         \"addtress\": $address,\n         \"username\": $username\n      }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"user info retrieved\",\n         \"userData\": $userData\n      }\n  ]\n}",
           "type": "json"
         }
       ]
@@ -1158,6 +1297,13 @@ define({ "api": [
             "optional": false,
             "field": "phone",
             "description": "<p>phone</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone2",
+            "description": "<p>phone2</p>"
           },
           {
             "group": "Parameter",
