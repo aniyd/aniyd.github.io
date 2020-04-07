@@ -867,7 +867,14 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "email",
-            "description": "<p>email</p> <hr>"
+            "description": "<p>email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "token",
+            "description": "<p>token</p> <hr>"
           }
         ]
       }
@@ -1528,7 +1535,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"admins list retrieved successfully\",\n         \"admin-list\": [{\"username\":\"admin1\", \"useremail\": \"admin1@gmail.com\"}, {\"username\":\"admin2\", \"useremail\": \"admin2@gmail.com\"}]\n     }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"admins list retrieved successfully\",\n         \"admin-list\": adminData_array\n     }\n  ]\n}",
           "type": "json"
         }
       ]
@@ -1604,7 +1611,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"agents list retrieved successfully\",\n         \"agent-list\": [{\"username\":\"Agent1\", \"useremail\": \"agent1@gmail.com\"}, {\"username\":\"Agent2\", \"useremail\": \"agent2@gmail.com\"}]\n     }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"agents list retrieved successfully\",\n         \"agent-list\": agentData_array\n     }\n  ]\n}",
           "type": "json"
         }
       ]
@@ -1680,7 +1687,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"clients list retrieved successfully\",\n         \"client-list\": [{\"username\":\"client1\", \"useremail\": \"client1@gmail.com\"}, {\"username\":\"client2\", \"useremail\": \"client2@gmail.com\"}]\n     }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"clients list retrieved successfully\",\n         \"client-list\": clientData_array\n     }\n  ]\n}",
           "type": "json"
         }
       ]
@@ -1756,7 +1763,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"managers list retrieved successfully\",\n         \"manager-list\": [{\"username\":\"Manager1\", \"useremail\": \"manager1@gmail.com\"}, {\"username\":\"Manager2\", \"useremail\": \"manager2@gmail.com\"}]\n     }\n  ]\n}",
+          "content": " {\n  \"Success\": true,\n  \"Status\": 200,\n  \"Message\": \"Success\",\n  \"AppVersion\": \"1.0.0\",\n  \"Result\": [\n      {\n         \"msg\": \"managers list retrieved successfully\",\n         \"manager-list\": managerData_array\n     }\n  ]\n}",
           "type": "json"
         }
       ]
